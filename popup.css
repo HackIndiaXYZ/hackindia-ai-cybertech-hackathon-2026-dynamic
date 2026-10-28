@@ -1,0 +1,155 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 360px;
+  min-height: 400px;
+  background: #0b1120;
+  color: #e5e7eb;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #172554;
+  border: 1px solid #2563eb;
+  border-radius: 14px;
+  font-size: 26px;
+}
+
+.header h1 {
+  font-size: 19px;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.header p {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.status-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: #111c2f;
+  border: 1px solid #24334a;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  background: #f59e0b;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.status-card h2 {
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.status-card p {
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.website-card {
+  padding: 16px;
+  background: #111827;
+  border: 1px solid #263449;
+  border-radius: 12px;
+}
+
+.website-card label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.website-card input {
+  width: 100%;
+  padding: 12px;
+  color: #ffffff;
+  background: #0b1120;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  outline: none;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.website-card input:focus {
+  border-color: #3b82f6;
+}
+
+.website-card button {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.website-card button:hover {
+  background: #1d4ed8;
+}
+
+.website-card button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+#result {
+  margin-top: 14px;
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  margin-top: 22px;
+  color: #64748b;
+  font-size: 10px;
+}
+
+#historyButton {
+  margin-top: 10px;
+  background: #172033;
+  border: 1px solid #334155;
+}
+
+#historyButton:hover {
+  background: #25334b;
+}

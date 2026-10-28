@@ -1,0 +1,37 @@
+
+{
+  "manifest_version": 3,
+  "name": "ThreatLens AI",
+  "version": "1.0.0",
+  "description": "AI-powered browser threat detection and protection.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "ThreatLens AI",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "scanner.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

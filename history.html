@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThreatLens AI - Threat History</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 28px;
+      background: #080e1b;
+      color: #e5edf9;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    h1 { margin: 0; font-size: 25px; }
+    .subtitle { margin-top: 7px; color: #8da4c3; font-size: 13px; }
+
+    button {
+      padding: 10px 14px;
+      border: 1px solid #2a3b56;
+      border-radius: 8px;
+      background: #142239;
+      color: #e5edf9;
+      cursor: pointer;
+    }
+
+    button:hover { background: #203451; }
+
+    .danger {
+      border-color: #7f303b;
+      background: #351721;
+    }
+
+    .summary {
+      margin-bottom: 18px;
+      padding: 16px;
+      border: 1px solid #263752;
+      border-radius: 12px;
+      background: #101a2c;
+    }
+
+    .summary span {
+      color: #48d9ff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid #263752;
+      border-radius: 12px;
+      background: #101a2c;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid #263752;
+      vertical-align: top;
+      font-size: 13px;
+    }
+
+    th { color: #8da4c3; font-weight: 600; }
+    td { overflow-wrap: anywhere; }
+
+    .risk {
+      display: inline-block;
+      padding: 5px 8px;
+      border-radius: 6px;
+      background: #1c2c43;
+      font-size: 12px;
+    }
+
+    .empty {
+      padding: 32px;
+      color: #8da4c3;
+      text-align: center;
+    }
+
+    #message {
+      margin: 14px 0;
+      color: #8da4c3;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      body { padding: 15px; }
+      h1 { font-size: 21px; }
+      th, td { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Threat History</h1>
+      <div class="subtitle">Previously scanned websites and their risk results</div>
+    </div>
+    <div>
+      <button id="refreshButton">Refresh</button>
+      <button id="clearButton" class="danger">Clear History</button>
+    </div>
+  </header>
+
+  <div class="summary">
+    Total saved scans: <span id="totalCount">0</span>
+  </div>
+
+  <div id="message" aria-live="polite"></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Website</th>
+          <th>Risk</th>
+          <th>Score</th>
+          <th>Date &amp; Time</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody id="historyBody"></tbody>
+    </table>
+    <div id="emptyState" class="empty" style="display:none">
+      No scan history yet. Scan a website using ThreatLens AI first.
+    </div>
+  </div>
+
+  <script src="history.js"></script>
+</body>
+</html>
